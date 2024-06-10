@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react'
-import axios from "axios"
+/* import { useState, useEffect } from 'react'
+import axios from "axios" */
 import "../assets/Cuadricula.css"
 import Cripto from './cripto/Cripto'
+import usePetition from '../hooks/usePetition'
 
 function Cuadricula() {
 
-  const API_URL = import.meta.env.VITE_API_URL
+  /* const API_URL = import.meta.env.VITE_API_URL */
 
-  const [criptos, setCriptos] = useState()
+  /* const [criptos, setCriptos] = useState() */
   
   //basic fetch way
   /* useEffect(()=>{
@@ -43,7 +44,7 @@ function Cuadricula() {
 
   //axios way
 
-  useEffect(()=>{    
+/*   useEffect(()=>{    
     axios.get(`${API_URL}assets`)
     .then((data)=>{
       //console.log(data);
@@ -52,15 +53,15 @@ function Cuadricula() {
     .catch(()=>{
       console.error("La petición falló");
     })
-  },[])
+  },[]) */
 
 
-  
+  const [criptos] = usePetition('assets')
 
   if (!criptos) return <span>Cargando...</span>
 
   return (
-    <div className='app-container'>      
+    <div className='grid-container'>      
       <h1>LISTA DE CRIPTOMONEDAS</h1>
       <div className='cripto-container'>
         {/* { criptos.map( cripto => (
