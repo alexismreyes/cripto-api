@@ -7,20 +7,36 @@ const Login = () => {
 
     const navigation = useNavigate()
 
+    const [loading, setLoading] = useState(false)
+
+    const [error, setError] = useState()
+
     const [user, setUser] = useState({
         email: "",
         password: ""
     })
 
     const submit = (e) => {
+
+        setLoading(true)
+
         e.preventDefault()
         console.log(user)
+        setError(null)
         axios.post(`https://reqres.in/api/login`,user)
         .then( data => {
+            setLoading(false)
             localStorage.setItem("tokenEDmarket",data.data.token)
-            navigation("/")
+            navigation("/")            
             } )
-        .catch(e=>console.error(e))
+        .catch(            
+            e=>{
+                setLoading(false)
+                console.error(e.response.data)
+                //console.table(e)
+                setError(e.response.data.error)
+            }
+        )
     }
 
     //si ya esta logeado no lo deje ir al login
@@ -53,9 +69,10 @@ const Login = () => {
                  }/>
             </div>
             <div className="submit">
-                <input type="submit" value="Ingresar" />
+                <input type="submit" value={ loading ? "loading..." : "Ingresar" } />
             </div>
         </form>
+        { error && (<span className="error">{error}</span>)}
         </div>
     )
 
