@@ -24,7 +24,7 @@ function Menu(){
                 <li><a onClick={()=>{
                     localStorage.removeItem("tokenEDmarket")
                     navigation("/login")
-                }}>Cerrar Sesion</a></li> 
+                }} className="pointer">Cerrar Sesion</a></li> 
 
                 
 
