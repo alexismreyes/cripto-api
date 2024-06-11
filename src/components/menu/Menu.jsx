@@ -1,11 +1,13 @@
 import "./Menu.css"
-import { Link, NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { UserContext } from "../../context/UserContext"
 import { useContext } from "react"
+
 
 function Menu(){    
 
     const usuario = useContext(UserContext)
+    const navigation = useNavigate()
 
     return(
         <nav className="main-menu">
@@ -19,6 +21,10 @@ function Menu(){
                 <li><NavLink to="/">Inicio</NavLink></li>
                 <li><NavLink to="/criptomonedas">Lista de criptos</NavLink></li> 
                 <li><NavLink to="/perfil">Perfil de {usuario.name}</NavLink></li> 
+                <li><a onClick={()=>{
+                    localStorage.removeItem("tokenEDmarket")
+                    navigation("/login")
+                }}>Cerrar Sesion</a></li> 
 
                 
 

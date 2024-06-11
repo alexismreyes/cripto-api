@@ -7,8 +7,9 @@ import Pagina404 from "./components/404.jsx";
 import Cuadricula from "./components/Cuadricula.jsx";
 import Home from "./components/Home.jsx";
 import CriptoPage from "./components/cripto/CriptoPage.jsx";
-import Perfil from "./components/Perfil.jsx";
+import Perfil from "./components/usuarios/Perfil.jsx";
 import { UserContextProvider } from "./context/UserContext.jsx";
+import Login from "./components/usuarios/Login.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <UserContextProvider>
@@ -23,6 +24,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route index element={<Cuadricula />} />
           <Route path=":cryptoid" element={<CriptoPage />} />
         </Route>
+
+        <Route path="/login" element={<Login/>} />
 
         <Route path="*" element={<Pagina404 />} />
       </Routes>
