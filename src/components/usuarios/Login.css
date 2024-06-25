@@ -38,3 +38,10 @@
     padding: 0.25rem 2rem;
     border-radius: .25rem;
   }
+
+  .credenciales{    
+    color: red;
+    margin: auto;
+    text-align: center;
+    margin-top: 1.5rem;
+  }

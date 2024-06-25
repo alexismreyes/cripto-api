@@ -6,7 +6,7 @@ const UserContextProvider = ({ children }) =>{
 
     const [usuario,setUsuario] = useState({})
     useEffect(()=>{
-        setUsuario({name: "Alexis 'TongueOfColicab' Reyes", registeredSince: "06/Aug/24"})
+        setUsuario({name: "Alexis Reyes", registeredSince: "06/Aug/24"})
     },[])
 
 

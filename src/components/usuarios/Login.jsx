@@ -43,6 +43,7 @@ const Login = () => {
     if(localStorage.getItem("tokenEDmarket")) return <Navigate to="/" />
 
     return (
+        <>
         <div className="login-container">        
         <h1>Iniciar Sesion</h1>
         <form onSubmit={ submit }>
@@ -71,9 +72,15 @@ const Login = () => {
             <div className="submit">
                 <input type="submit" value={ loading ? "loading..." : "Ingresar" } />
             </div>
-        </form>
+        </form>        
         { error && (<span className="error">{error}</span>)}
         </div>
+        <div className="credenciales">
+            <p>Credenciales (Obtenidas desde API - https://reqres.in/):</p>
+            <p>email: eve.holt@reqres.in</p>
+            <p>contraseña: cityslicka</p>
+        </div>
+        </>
     )
 
 }
