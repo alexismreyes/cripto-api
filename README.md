@@ -1,8 +1,40 @@
-# React + Vite
+## CRYPTO-API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+***Stack:***
 
-Currently, two official plugins are available:
+  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+***- Node***
+
+***- VITE***
+
+***- React***
+
+***- React router dom 6***
+
+### Features:  
+This project fetch crypto info from COINCAP API and renders it into some react components (A whole list of cryptos and one specific view of crypto info). It also uses an API from https://reqres.in/ to login
+
+
+
+### Steps to install:
+
+1)  git clone
+
+  
+
+2)  cd cripto-api
+
+  
+
+3)  yarn
+
+(to install dependencies / install yarn if not installed -> sudo npm install -g yarn)
+
+  
+
+4)  yarn dev
+
+  
+
+5)  open the location at the browser (default http://localhost:5173)
